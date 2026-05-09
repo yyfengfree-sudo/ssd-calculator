@@ -1325,19 +1325,35 @@ def main():
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 6px;
         }
-        /* 侧边栏选择框选中值 - 更精确的选择器 */
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div > div {
+        /* 侧边栏选择框选中值 - 多种选择器覆盖 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] .css-1poimk {
             color: #ffffff !important;
         }
-        /* 侧边栏选择框所有文本元素 */
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] div {
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] .css-1poimk p {
+            color: #ffffff !important;
+        }
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] .css-1poimk span {
             color: #ffffff !important;
         }
         /* 侧边栏选择框value容器 */
+        section[data-testid="stSidebar"] .stSelectbox [data-testid="stMarkdownContainer"] {
+            color: #ffffff !important;
+        }
         section[data-testid="stSidebar"] .stSelectbox [data-testid="stMarkdownContainer"] p {
             color: #ffffff !important;
         }
-        /* 侧边栏选择框输入框 */
+        /* 侧边栏选择框所有嵌套div */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div {
+            color: #ffffff !important;
+        }
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div > div {
+            color: #ffffff !important;
+        }
+        /* 侧边栏选择框button内的值 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] button {
+            color: #ffffff !important;
+        }
+        /* 侧边栏选择框input */
         section[data-testid="stSidebar"] .stSelectbox input {
             color: #ffffff !important;
             background-color: transparent !important;
@@ -1345,6 +1361,10 @@ def main():
         /* 侧边栏选择框placeholder */
         section[data-testid="stSidebar"] .stSelectbox input::placeholder {
             color: rgba(255, 255, 255, 0.6) !important;
+        }
+        /* 侧边栏选择框svg图标 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] svg {
+            fill: #ffffff !important;
         }
         /* 侧边栏下拉选项列表 */
         section[data-testid="stSidebar"] ul[role="listbox"] {
