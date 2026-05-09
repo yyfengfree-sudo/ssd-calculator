@@ -1325,37 +1325,28 @@ def main():
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 6px;
         }
-        /* 侧边栏选择框选中值 - 多种选择器覆盖 */
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] .css-1poimk {
+        /* 侧边栏选择框所有文字 - 强制白色 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"],
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] * {
+            color: #ffffff !important;
+            fill: #ffffff !important;
+        }
+        /* 侧边栏选择框p标签 */
+        section[data-testid="stSidebar"] .stSelectbox p {
             color: #ffffff !important;
         }
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] .css-1poimk p {
+        /* 侧边栏选择框span标签 */
+        section[data-testid="stSidebar"] .stSelectbox span {
             color: #ffffff !important;
         }
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] .css-1poimk span {
+        /* 侧边栏选择框button */
+        section[data-testid="stSidebar"] .stSelectbox button {
             color: #ffffff !important;
         }
-        /* 侧边栏选择框value容器 */
-        section[data-testid="stSidebar"] .stSelectbox [data-testid="stMarkdownContainer"] {
-            color: #ffffff !important;
-        }
-        section[data-testid="stSidebar"] .stSelectbox [data-testid="stMarkdownContainer"] p {
-            color: #ffffff !important;
-        }
-        /* 侧边栏选择框所有嵌套div */
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div {
-            color: #ffffff !important;
-        }
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div > div {
-            color: #ffffff !important;
-        }
-        /* 侧边栏选择框button内的值 */
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] button {
-            color: #ffffff !important;
-        }
-        /* 侧边栏选择框input */
+        /* 侧边栏选择框input - 强制白色 */
         section[data-testid="stSidebar"] .stSelectbox input {
             color: #ffffff !important;
+            caret-color: #ffffff !important;
             background-color: transparent !important;
         }
         /* 侧边栏选择框placeholder */
@@ -1363,8 +1354,37 @@ def main():
             color: rgba(255, 255, 255, 0.6) !important;
         }
         /* 侧边栏选择框svg图标 */
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] svg {
+        section[data-testid="stSidebar"] .stSelectbox svg {
             fill: #ffffff !important;
+            stroke: #ffffff !important;
+        }
+        /* 侧边栏选择框下拉箭头 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div:last-child {
+            color: #ffffff !important;
+        }
+        /* 强制覆盖所有可能的CSS类 */
+        section[data-testid="stSidebar"] .css-1poimk,
+        section[data-testid="stSidebar"] .css-1poimk p,
+        section[data-testid="stSidebar"] .css-1poimk span {
+            color: #ffffff !important;
+        }
+        section[data-testid="stSidebar"] .css-qba7xs,
+        section[data-testid="stSidebar"] .css-qba7xs * {
+            color: #ffffff !important;
+        }
+        /* 侧边栏下拉选项列表 */
+        section[data-testid="stSidebar"] ul[role="listbox"] {
+            background-color: #2d5a87 !important;
+        }
+        section[data-testid="stSidebar"] ul[role="listbox"] li,
+        section[data-testid="stSidebar"] ul[role="listbox"] li * {
+            color: #ffffff !important;
+        }
+        section[data-testid="stSidebar"] ul[role="listbox"] li:hover,
+        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"],
+        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"] * {
+            background-color: rgba(56, 161, 105, 0.3) !important;
+            color: #ffffff !important;
         }
         /* 侧边栏下拉选项列表 */
         section[data-testid="stSidebar"] ul[role="listbox"] {
