@@ -1297,9 +1297,50 @@ def main():
         section[data-testid="stSidebar"] {
             background: linear-gradient(180deg, #1a365d 0%, #2d5a87 100%);
         }
+        /* 侧边栏内所有元素样式优化 */
         section[data-testid="stSidebar"] .stMarkdown,
-        section[data-testid="stSidebar"] label,
         section[data-testid="stSidebar"] .stHeader {
+            color: #ffffff;
+        }
+        /* 侧边栏标签样式 - 增强清晰度 */
+        section[data-testid="stSidebar"] label,
+        section[data-testid="stSidebar"] .stSelectbox label,
+        section[data-testid="stSidebar"] .stCheckbox label {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            font-size: 15px !important;
+            letter-spacing: 0.5px;
+        }
+        /* 侧边栏选择框容器 */
+        section[data-testid="stSidebar"] .stSelectbox,
+        section[data-testid="stSidebar"] .stCheckbox {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+        }
+        /* 侧边栏下拉选择框 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+        }
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div {
+            color: #ffffff;
+            font-size: 14px;
+        }
+        /* 侧边栏复选框 */
+        section[data-testid="stSidebar"] .stCheckbox input[type="checkbox"] {
+            accent-color: #38a169;
+        }
+        /* 侧边栏分隔线 */
+        section[data-testid="stSidebar"] hr {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        /* 侧边栏信息提示 */
+        section[data-testid="stSidebar"] .stAlert {
+            background-color: rgba(56, 161, 105, 0.2);
+            border: 1px solid #38a169;
             color: #ffffff;
         }
         /* 标题样式 - 主品牌蓝 */
@@ -1322,7 +1363,7 @@ def main():
         .stButton > button[kind="primary"]:hover {
             background-color: #2f855a;
         }
-        /* 选择框样式 */
+        /* 主内容区选择框样式 */
         .stSelectbox label, .stCheckbox label {
             color: #1a365d !important;
             font-weight: 500;
