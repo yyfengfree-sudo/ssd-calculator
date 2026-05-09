@@ -1373,35 +1373,40 @@ def main():
             color: #ffffff !important;
         }
         /* 侧边栏下拉选项列表 - 深蓝背景白色文字 */
-        section[data-testid="stSidebar"] ul[role="listbox"] {
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] {
             background-color: #1a365d !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li {
-            color: #ffffff !important;
-            background-color: transparent !important;
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] > div {
+            background-color: #1a365d !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li p,
-        section[data-testid="stSidebar"] ul[role="listbox"] li span {
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] li {
+            color: #ffffff !important;
+            background-color: #1a365d !important;
+        }
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] li p,
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] li span,
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] li div {
             color: #ffffff !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li:hover {
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] li:hover {
             background-color: #38a169 !important;
             color: #ffffff !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"] {
+        section[data-testid="stSidebar"] [data-baseweb="listbox"] li[aria-selected="true"] {
             background-color: rgba(56, 161, 105, 0.5) !important;
             color: #ffffff !important;
         }
-        /* 侧边栏下拉选项列表 */
-        section[data-testid="stSidebar"] ul[role="listbox"] {
-            background-color: #2d5a87 !important;
+        /* 针对下拉弹出层的样式 */
+        div[data-baseweb="listbox"] {
+            background-color: #1a365d !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li {
+        div[data-baseweb="listbox"] li {
             color: #ffffff !important;
+            background-color: #1a365d !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li:hover,
-        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"] {
-            background-color: rgba(56, 161, 105, 0.3) !important;
+        div[data-baseweb="listbox"] li:hover {
+            background-color: #38a169 !important;
+            color: #ffffff !important;
         }
         /* 侧边栏复选框 */
         section[data-testid="stSidebar"] .stCheckbox input[type="checkbox"] {
