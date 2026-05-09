@@ -1286,62 +1286,120 @@ def main():
 
     st.set_page_config(page_title="SSD 控制器性能计算器", layout="wide")
 
-    # 添加温暖的页面样式
+    # 得一微电子 Yeestor 风格配色 - 科技蓝绿色调
     st.markdown("""
     <style>
-        /* 主背景色 - 温暖的浅橙色调 */
+        /* 主背景色 - 科技感浅蓝 */
         .stApp {
-            background-color: #fff8f0;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f5f0 100%);
         }
-        /* 侧边栏样式 */
+        /* 侧边栏样式 - 深蓝渐变 */
         section[data-testid="stSidebar"] {
-            background-color: #ffecd2;
+            background: linear-gradient(180deg, #1a365d 0%, #2d5a87 100%);
         }
-        /* 标题样式 */
+        section[data-testid="stSidebar"] .stMarkdown,
+        section[data-testid="stSidebar"] label,
+        section[data-testid="stSidebar"] .stHeader {
+            color: #ffffff;
+        }
+        /* 标题样式 - 主品牌蓝 */
         h1 {
-            color: #d35400;
+            color: #1a365d;
+            font-weight: 600;
+            border-bottom: 3px solid #38a169;
+            padding-bottom: 10px;
         }
         h2, h3 {
-            color: #e67e22;
+            color: #2d5a87;
         }
-        /* 主按钮样式 */
+        /* 主按钮样式 - 得一绿 */
         .stButton > button[kind="primary"] {
-            background-color: #e67e22;
+            background-color: #38a169;
             color: white;
             border: none;
+            font-weight: 500;
         }
         .stButton > button[kind="primary"]:hover {
-            background-color: #d35400;
+            background-color: #2f855a;
         }
-        /* 选择框标签 */
-        label {
-            color: #8b4513;
-        }
-        /* 输入框 */
-        .stTextInput input {
-            border-color: #e67e22;
+        /* 选择框样式 */
+        .stSelectbox label, .stCheckbox label {
+            color: #1a365d !important;
+            font-weight: 500;
         }
         /* 分隔线 */
         hr {
-            border-color: #e67e22;
+            border-color: #38a169;
+            opacity: 0.5;
         }
-        /* Metric 卡片 */
+        /* Metric 卡片 - 蓝绿渐变 */
         [data-testid="stMetric"] {
-            background-color: #ffecd2;
-            border-radius: 10px;
-            padding: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            border: 2px solid #38a169;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(26, 54, 93, 0.1);
         }
-        /* 密码输入框 */
-        .stTextInput input[type="password"] {
-            background-color: #fff8f0;
+        [data-testid="stMetric"] label {
+            color: #2d5a87;
+        }
+        [data-testid="stMetric"] [data-testid="stMetricValue"] {
+            color: #1a365d;
+            font-weight: 700;
+        }
+        /* 信息提示框 */
+        .stAlert {
+            border-radius: 8px;
+        }
+        /* 品牌宣传区域 */
+        .brand-banner {
+            background: linear-gradient(90deg, #1a365d 0%, #38a169 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .brand-banner h2 {
+            color: white;
+            margin: 0;
+        }
+        .brand-banner p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+        }
+        /* 页脚 */
+        .footer-info {
+            text-align: center;
+            padding: 20px;
+            color: #4a5568;
+            font-size: 14px;
+        }
+        .footer-info a {
+            color: #38a169;
         }
     </style>
+    """, unsafe_allow_html=True)
+
+    # 品牌宣传 Banner
+    st.markdown("""
+    <div class="brand-banner">
+        <h2>得一微电子 Yeestor</h2>
+        <p>专业 SSD 控制器解决方案 | 高性能存储技术</p>
+    </div>
     """, unsafe_allow_html=True)
 
     st.title("SSD 控制器性能计算器")
     st.markdown("---")
 
     with st.sidebar:
+        # 侧边栏品牌宣传
+        st.markdown("""
+        <div style="text-align: center; padding: 10px 0;">
+            <h2 style="color: #38a169; margin: 0;">Yeestor</h2>
+            <p style="color: #ffffff; opacity: 0.8; font-size: 12px;">得一微电子</p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.markdown("---")
         st.header("配置参数")
 
         ctrl_type = st.selectbox("控制器类型", list(CONTROLLERS.keys()))
@@ -1407,6 +1465,15 @@ def main():
         st.markdown("---")
         if st.button("开始计算", type="primary", use_container_width=True):
             st.session_state.calculate = True
+
+        # 侧边栏页脚
+        st.markdown("---")
+        st.markdown("""
+        <div style="text-align: center; opacity: 0.8;">
+            <p style="color: #ffffff; font-size: 11px;">作者: Suke</p>
+            <p style="color: #38a169; font-size: 11px;">747982670@163.com</p>
+        </div>
+        """, unsafe_allow_html=True)
 
     # 构建配置
     cfg = {
@@ -1492,6 +1559,16 @@ def main():
 
         # 重置计算标志，但保留结果
         # st.session_state.calculate = False
+
+    # 页脚 - 作者信息
+    st.markdown("---")
+    st.markdown("""
+    <div class="footer-info">
+        <p><strong>作者：Suke</strong> | 联系邮箱：<a href="mailto:747982670@163.com">747982670@163.com</a></p>
+        <p>基于得一微电子 Yeestor SSD 控制器技术 | 性能计算工具 v1.0</p>
+        <p style="opacity: 0.7; font-size: 12px;">© 2024 Yeestor SSD Performance Calculator</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
