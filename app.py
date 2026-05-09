@@ -1325,9 +1325,26 @@ def main():
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 6px;
         }
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div {
-            color: #ffffff;
-            font-size: 14px;
+        /* 侧边栏选择框选中值 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div > div:first-child {
+            color: #ffffff !important;
+            font-size: 14px !important;
+        }
+        /* 侧边栏选择框输入框 */
+        section[data-testid="stSidebar"] input {
+            color: #ffffff !important;
+            background-color: transparent !important;
+        }
+        /* 侧边栏下拉选项列表 */
+        section[data-testid="stSidebar"] ul[role="listbox"] {
+            background-color: #2d5a87 !important;
+        }
+        section[data-testid="stSidebar"] ul[role="listbox"] li {
+            color: #ffffff !important;
+        }
+        section[data-testid="stSidebar"] ul[role="listbox"] li:hover,
+        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"] {
+            background-color: rgba(56, 161, 105, 0.3) !important;
         }
         /* 侧边栏复选框 */
         section[data-testid="stSidebar"] .stCheckbox input[type="checkbox"] {
