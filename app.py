@@ -1372,18 +1372,24 @@ def main():
         section[data-testid="stSidebar"] .css-qba7xs * {
             color: #ffffff !important;
         }
-        /* 侧边栏下拉选项列表 */
+        /* 侧边栏下拉选项列表 - 深蓝背景白色文字 */
         section[data-testid="stSidebar"] ul[role="listbox"] {
-            background-color: #2d5a87 !important;
+            background-color: #1a365d !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li,
-        section[data-testid="stSidebar"] ul[role="listbox"] li * {
+        section[data-testid="stSidebar"] ul[role="listbox"] li {
+            color: #ffffff !important;
+            background-color: transparent !important;
+        }
+        section[data-testid="stSidebar"] ul[role="listbox"] li p,
+        section[data-testid="stSidebar"] ul[role="listbox"] li span {
             color: #ffffff !important;
         }
-        section[data-testid="stSidebar"] ul[role="listbox"] li:hover,
-        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"],
-        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"] * {
-            background-color: rgba(56, 161, 105, 0.3) !important;
+        section[data-testid="stSidebar"] ul[role="listbox"] li:hover {
+            background-color: #38a169 !important;
+            color: #ffffff !important;
+        }
+        section[data-testid="stSidebar"] ul[role="listbox"] li[aria-selected="true"] {
+            background-color: rgba(56, 161, 105, 0.5) !important;
             color: #ffffff !important;
         }
         /* 侧边栏下拉选项列表 */
