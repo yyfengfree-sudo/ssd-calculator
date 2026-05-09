@@ -1325,15 +1325,26 @@ def main():
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 6px;
         }
-        /* 侧边栏选择框选中值 */
-        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div > div:first-child {
+        /* 侧边栏选择框选中值 - 更精确的选择器 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div > div {
             color: #ffffff !important;
-            font-size: 14px !important;
+        }
+        /* 侧边栏选择框所有文本元素 */
+        section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] div {
+            color: #ffffff !important;
+        }
+        /* 侧边栏选择框value容器 */
+        section[data-testid="stSidebar"] .stSelectbox [data-testid="stMarkdownContainer"] p {
+            color: #ffffff !important;
         }
         /* 侧边栏选择框输入框 */
-        section[data-testid="stSidebar"] input {
+        section[data-testid="stSidebar"] .stSelectbox input {
             color: #ffffff !important;
             background-color: transparent !important;
+        }
+        /* 侧边栏选择框placeholder */
+        section[data-testid="stSidebar"] .stSelectbox input::placeholder {
+            color: rgba(255, 255, 255, 0.6) !important;
         }
         /* 侧边栏下拉选项列表 */
         section[data-testid="stSidebar"] ul[role="listbox"] {
