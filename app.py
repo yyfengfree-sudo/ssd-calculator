@@ -1285,6 +1285,59 @@ def main():
         return
 
     st.set_page_config(page_title="SSD 控制器性能计算器", layout="wide")
+
+    # 添加温暖的页面样式
+    st.markdown("""
+    <style>
+        /* 主背景色 - 温暖的浅橙色调 */
+        .stApp {
+            background-color: #fff8f0;
+        }
+        /* 侧边栏样式 */
+        section[data-testid="stSidebar"] {
+            background-color: #ffecd2;
+        }
+        /* 标题样式 */
+        h1 {
+            color: #d35400;
+        }
+        h2, h3 {
+            color: #e67e22;
+        }
+        /* 主按钮样式 */
+        .stButton > button[kind="primary"] {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+        }
+        .stButton > button[kind="primary"]:hover {
+            background-color: #d35400;
+        }
+        /* 选择框标签 */
+        label {
+            color: #8b4513;
+        }
+        /* 输入框 */
+        .stTextInput input {
+            border-color: #e67e22;
+        }
+        /* 分隔线 */
+        hr {
+            border-color: #e67e22;
+        }
+        /* Metric 卡片 */
+        [data-testid="stMetric"] {
+            background-color: #ffecd2;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        /* 密码输入框 */
+        .stTextInput input[type="password"] {
+            background-color: #fff8f0;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
     st.title("SSD 控制器性能计算器")
     st.markdown("---")
 
@@ -1345,7 +1398,11 @@ def main():
             st.warning("This Flash Not Support DummyMode")
             is_dummy_mode_en = False
 
-        is_seq4k_rd = st.checkbox("Seq 4K Read", value=False)
+        # Seq 4K Read 选项 - 仅 9205 控制器可用
+        is_seq4k_rd_enabled = (ctrl_type == "9205")
+        if not is_seq4k_rd_enabled:
+            st.info("Seq 4K Read 仅 9205 控制器支持")
+        is_seq4k_rd = st.checkbox("Seq 4K Read", value=False, disabled=not is_seq4k_rd_enabled)
 
         st.markdown("---")
         if st.button("开始计算", type="primary", use_container_width=True):
