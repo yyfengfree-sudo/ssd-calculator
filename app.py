@@ -2035,7 +2035,13 @@ def main():
             with row2_col2:
                 st.metric("Real Seq Wr Tabupdate (GB/s)", f"{g.get('RealSeqWrSpeedTabupdate', 0):.3f}")
             with row2_col3:
-                st.metric("Rnd Wr (K IOPS)", f"{g.get('MrdRndWrIops', 0):.3f}")
+                st.markdown("""
+                <div style="background: rgba(255,255,255,0.9); border-radius: 16px; padding: 18px 16px; box-shadow: 0 4px 20px rgba(15,43,77,0.12); min-height: 120px;">
+                    <div style="font-size: 14px; color: #4a5568; margin-bottom: 10px; font-weight: 600;">后端Rnd Wr（KIOPS）</div>
+                    <div style="font-size: 28px; font-weight: 800; color: #0f2b4d; line-height: 1.2; margin-bottom: 8px;">暂时不提供参考</div>
+                    <div style="font-size: 12px; color: #718096; line-height: 1.5;">因为随机写性能和表格更新流程强相关，也就是和FTL架构相关，所以不提供</div>
+                </div>
+                """, unsafe_allow_html=True)
 
             st.markdown("**1024 Base 计算结果**")
             row3_col1, row3_col2, row3_col3 = st.columns(3)
