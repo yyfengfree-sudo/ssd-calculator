@@ -2035,7 +2035,7 @@ def main():
             with row2_col2:
                 st.metric("Real Seq Wr Tabupdate (GB/s)", f"{g.get('RealSeqWrSpeedTabupdate', 0):.3f}")
             with row2_col3:
-                st.metric("Rnd Rd (K IOPS)", f"{g.get('RndRdIops', 0):.3f}")
+                st.metric("Rnd Wr (K IOPS)", f"{g.get('MrdRndWrIops', 0):.3f}")
 
             st.markdown("**1024 Base 计算结果**")
             row3_col1, row3_col2, row3_col3 = st.columns(3)
